@@ -24,5 +24,10 @@ function addBookToLibrary() {
     let pages = document.querySelector('#pages').value
     let read = document.querySelector('#read').checked
     let newBook = new Book(title, author, pages, read)
-    console.log(newBook)
+    myLibrary.push(newBook)
+    render()
+}
+
+function render() {
+    let libraryBook = document.querySelector('.library')
 }
