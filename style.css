@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-book-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 32px;
+    box-shadow: 1px 1px 10px black;
+    margin-bottom: 16px;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 8px;
+}
+
+.library {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 16px;
+}

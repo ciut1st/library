@@ -29,15 +29,18 @@ function render() {
         let book = myLibrary[i]
         let bookDiv = document.createElement("div")
         bookDiv.innerHTML = `
-        <div class="card-header">
-            <h3 class="title">${book.title}</h3>
-            <h5 class="author">by ${book.author}</h5>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="title">${book.title}</h3>
+                <h5 class="author">by ${book.author}</h5>
+            </div>
+            <div class="card-body">
+                <p>${book.pages} pages</p>
+                <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+                <button class="remove-button" onclick="removeBook(${i})">Remove</button>
+                <button class="toggle-read-button" onclick="toggleRead(${i})">Toggle Read</button>
+            </div>
         </div>
-        <div class="card-body">
-            <p>${book.pages} pages</p>
-            <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
-            <button class="remove-button" onclick="removeBook(${i})">Remove</button>
-            <button class="toggle-read-button" onclick="toggleRead(${i})">Toggle Read</button>
         `
         libraryDiv.appendChild(bookDiv)
     }
