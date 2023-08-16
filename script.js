@@ -1,3 +1,12 @@
+const myLibrary = [];
+
+function Book(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+}
+
 const newBookButton = document.querySelector(".new-book-button")
 newBookButton.addEventListener('click', function() {
     let newBookForm = document.querySelector(".new-book-form")
@@ -8,24 +17,6 @@ document.querySelector('.new-book-form').addEventListener('submit', function () 
     event.preventDefault()
     addBookToLibrary()
 })
-
-const myLibrary = [];
-
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-}
-
-Book.prototype.toggleRead = function () {
-    this.read = !this.read
-}
-
-function toggleRead(index) {
-    myLibrary[index].toggleRead()
-    render()
-}
 
 function addBookToLibrary() {
     let title = document.querySelector('#title').value
@@ -57,6 +48,17 @@ function render() {
         libraryDiv.appendChild(bookDiv)
     }
 }
+
+Book.prototype.toggleRead = function () {
+    this.read = !this.read
+}
+
+function toggleRead(index) {
+    myLibrary[index].toggleRead()
+    render()
+}
+
+
 
 function removeBook(index) {
     myLibrary.splice(index, 1)
