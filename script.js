@@ -7,12 +7,6 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-const newBookButton = document.querySelector(".new-book-button")
-newBookButton.addEventListener('click', function() {
-    let newBookForm = document.querySelector(".new-book-form")
-    newBookForm.style.display = "block"
-})
-
 document.querySelector('.new-book-form').addEventListener('submit', function () {
     event.preventDefault()
     addBookToLibrary()
