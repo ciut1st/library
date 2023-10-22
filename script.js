@@ -12,6 +12,10 @@ class Book {
     this.pages = pages
     this.read = read
     }
+    
+    toggleRead() {
+    this.read = !this.read
+    }
 }
 
 document.querySelector('.new-book-form').addEventListener('submit', function () {
@@ -51,10 +55,6 @@ function render() {
         `
         libraryDiv.appendChild(bookDiv)
     }
-}
-
-Book.prototype.toggleRead = function () {
-    this.read = !this.read
 }
 
 function toggleRead(index) {
